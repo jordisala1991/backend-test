@@ -56,6 +56,21 @@ class GildedRose {
                 return;
             }
 
+            if($item->getName() !== self::SULFURAS) {
+                $item->decrementQuality();
+                $item->decrementSellIn();
+
+                if($item->getSellIn()< 0) {
+                    $item->decrementQuality();
+                }
+
+                if($item->getQuality() <= 0) {
+                    $item->setQuality(0);
+                }
+
+                return;
+            }
+
             if ($item->getName() != self::AGED_BRIE and $item->getName() != self::BACKSTAGE) {
                 if ($item->getQuality() > 0) {
                     if ($item->getName() != self::SULFURAS) {
