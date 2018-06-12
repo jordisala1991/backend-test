@@ -13,6 +13,7 @@ class GildedRose {
     function update_quality() {
 
         foreach ($this->items as $item) {
+
             $item->update();
         }
     }

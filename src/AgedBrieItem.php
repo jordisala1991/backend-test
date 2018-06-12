@@ -2,8 +2,9 @@
 
 namespace Runroom\GildedRose;
 
-class Item implements ItemInterface {
 
+class AgedBrieItem implements ItemInterface
+{
     public $name;
     public $sell_in;
     public $quality;
@@ -87,40 +88,15 @@ class Item implements ItemInterface {
 
     public function update()
     {
+        $this->decrementSellIn();
+        $this->incrementQuality();
 
-        if ($this->getName() === self::BACKSTAGE) {
-
+        if($this->getSellIn() <= 0) {
             $this->incrementQuality();
-
-            if($this->getSellIn() <= 10) {
-                $this->incrementQuality();
-            }
-
-            if($this->getSellIn() <= 5) {
-                $this->incrementQuality();
-            }
-
-            if($this->getSellIn() <= 0) {
-                $this->setQuality(0);
-            }
-
-            $this->decrementSellIn();
-            return;
         }
 
-        if($this->getName() !== self::SULFURAS) {
-            $this->decrementQuality();
-            $this->decrementSellIn();
-
-            if($this->getSellIn()< 0) {
-                $this->decrementQuality();
-            }
-
-            if($this->getQuality() <= 0) {
-                $this->setQuality(0);
-            }
-
-            return;
+        if($this->getQuality() >= 50) {
+            $this->setQuality(50);
         }
     }
 

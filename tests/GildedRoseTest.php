@@ -3,6 +3,7 @@
 namespace Runroom\GildedRose\Tests;
 
 use PHPUnit\Framework\TestCase;
+use Runroom\GildedRose\AgedBrieItem;
 use Runroom\GildedRose\GildedRose;
 use Runroom\GildedRose\Item;
 
@@ -52,7 +53,7 @@ class GildedRoseTest extends TestCase
      */
     public function agedBrieIncreasesQualityOverTime()
     {
-  		$items = [new Item('Aged Brie', 0, 5)];
+  		$items = [new AgedBrieItem('Aged Brie', 0, 5)];
 
         $gilded_rose = new GildedRose($items);
         $gilded_rose->update_quality();
@@ -65,7 +66,7 @@ class GildedRoseTest extends TestCase
      */
     public function qualityCannotBeGreaterThan50()
     {
-  		$items = [new Item('Aged Brie', 0, 50)];
+  		$items = [new AgedBrieItem('Aged Brie', 0, 50)];
 
         $gilded_rose = new GildedRose($items);
         $gilded_rose->update_quality();
