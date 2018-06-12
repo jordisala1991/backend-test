@@ -6,7 +6,7 @@ namespace Runroom\GildedRose;
 class Item extends ItemInterface
 {
 
-    public function update()
+    public function update(): void
     {
 
         $this->decrementQuality();

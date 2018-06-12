@@ -9,60 +9,65 @@ abstract class ItemInterface
     public $sell_in;
     public $quality;
 
-    function __construct($name, $sell_in, $quality) {
+    function __construct(string $name, int $sell_in, int $quality) {
         $this->name = $name;
         $this->sell_in = $sell_in;
         $this->quality = $quality;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
-    public function getSellIn()
+    public function getSellIn(): int
     {
         return $this->sell_in;
     }
 
     /**
-     * @param mixed $sell_in
+     * @param integer $sell_in
      */
-    public function setSellIn($sell_in)
+    public function setSellIn(int $sell_in): void
     {
         $this->sell_in = $sell_in;
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
-    public function getQuality()
+    public function getQuality(): int
     {
         return $this->quality;
     }
+
     /**
-     * @param mixed $quality
+     * @param integer $quality
      */
-    public function setQuality($quality)
+    public function setQuality(int $quality): void
     {
         $this->quality = $quality;
     }
 
-    public function __toString() {
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
         return "{$this->name}, {$this->sell_in}, {$this->quality}";
     }
 
@@ -86,5 +91,5 @@ abstract class ItemInterface
         $this->sell_in--;
     }
 
-    public function update(){}
+    public function update(): void{}
 }

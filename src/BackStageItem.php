@@ -6,7 +6,7 @@ namespace Runroom\GildedRose;
 class BackStageItem extends ItemInterface
 {
 
-    public function update()
+    public function update(): void
     {
         $this->incrementQuality();
 
