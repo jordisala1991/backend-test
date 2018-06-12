@@ -7,6 +7,7 @@ use Runroom\GildedRose\AgedBrieItem;
 use Runroom\GildedRose\BackStageItem;
 use Runroom\GildedRose\GildedRose;
 use Runroom\GildedRose\Item;
+use Runroom\GildedRose\SulfurasItem;
 
 class GildedRoseTest extends TestCase
 {
@@ -80,7 +81,7 @@ class GildedRoseTest extends TestCase
      */
     public function sulfurasDoesNotChange()
     {
-  		$items = [new Item('Sulfuras, Hand of Ragnaros', 10, 10)];
+  		$items = [new SulfurasItem('Sulfuras, Hand of Ragnaros', 10, 10)];
 
         $gilded_rose = new GildedRose($items);
         $gilded_rose->update_quality();

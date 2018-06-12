@@ -2,8 +2,9 @@
 
 namespace Runroom\GildedRose;
 
-class Item implements ItemInterface {
 
+class SulfurasItem implements ItemInterface
+{
     public $name;
     public $sell_in;
     public $quality;
@@ -87,18 +88,7 @@ class Item implements ItemInterface {
 
     public function update()
     {
-
-        $this->decrementQuality();
-        $this->decrementSellIn();
-
-        if($this->getSellIn()< 0) {
-            $this->decrementQuality();
-        }
-
-        if($this->getQuality() <= 0) {
-            $this->setQuality(0);
-        }
-
+        // TODO: Implement update() method.
     }
 
 }
