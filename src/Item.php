@@ -65,22 +65,22 @@ class Item {
         return "{$this->name}, {$this->sell_in}, {$this->quality}";
     }
 
-    public function incrementQuality()
+    public function incrementQuality(): void
     {
         $this->quality++;
     }
 
-    public function decrementQuality()
+    public function decrementQuality(): void
     {
         $this->quality--;
     }
 
-    public function incrementSellIn()
+    public function incrementSellIn(): void
     {
         $this->sell_in++;
     }
 
-    public function decrementSellIn()
+    public function decrementSellIn(): void
     {
         $this->sell_in--;
     }

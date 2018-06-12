@@ -17,7 +17,25 @@ class GildedRose {
     }
 
     function update_quality() {
+
         foreach ($this->items as $item) {
+
+            if ($item->getName() === self::AGED_BRIE) {
+
+                $item->decrementSellIn();
+                $item->incrementQuality();
+
+                if($item->getSellIn() <= 0) {
+                    $item->incrementQuality();
+                }
+
+                if($item->getQuality() >= 50) {
+                    $item->setQuality(50);
+                }
+
+                return;
+            }
+
             if ($item->getName() != self::AGED_BRIE and $item->getName() != self::BACKSTAGE) {
                 if ($item->getQuality() > 0) {
                     if ($item->getName() != self::SULFURAS) {
