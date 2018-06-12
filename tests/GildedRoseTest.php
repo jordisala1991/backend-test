@@ -4,6 +4,7 @@ namespace Runroom\GildedRose\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Runroom\GildedRose\AgedBrieItem;
+use Runroom\GildedRose\BackStageItem;
 use Runroom\GildedRose\GildedRose;
 use Runroom\GildedRose\Item;
 
@@ -107,7 +108,7 @@ class GildedRoseTest extends TestCase
      */
     public function backstageQualityIncreaseOverTimeWithCertainRules($sellIn, $quality, $expected)
     {
-  		$items = [new Item('Backstage passes to a TAFKAL80ETC concert', $sellIn, $quality)];
+  		$items = [new BackStageItem('Backstage passes to a TAFKAL80ETC concert', $sellIn, $quality)];
 
         $gilded_rose = new GildedRose($items);
         $gilded_rose->update_quality();
